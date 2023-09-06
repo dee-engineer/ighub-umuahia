@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    
+    <div class="container-lg text-center">
+        <h1 class="fw-bold text-success my-5">Currency Converter</h1>
+        <div class="border w-50 mx-auto shadow rounded p-5">
+            <form action="{% url 'home' %}" method="post">
+                {% csrf_token %}
+                <div class="my-2">
+                    <select name="from" class="form-select" aria-label="Default select example">
+                        <option selected>From</option>
+                        <option value="1">Naira</option>
+                        <option value="2">Dollar</option>
+                        <option value="3">Euro</option>
+                      </select>
+                </div>
+                <div class="my-2">
+                    <select name="to" class="form-select" aria-label="Default select example">
+                        <option selected>To</option>
+                        <option value="1">Naira</option>
+                        <option value="2">Dollar</option>
+                        <option value="3">Euro</option>
+                      </select>
+                </div>
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-success fw-bold">convert</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
